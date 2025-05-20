@@ -1,8 +1,8 @@
 [run]
-source = project_name
+source = example_stt
 
 [report]
 omit =
     */python?.?/*
     */site-packages/nose/*
-    project_name/__main__.py
+    example_stt/__main__.py

@@ -5,11 +5,11 @@ from dynaconf import Dynaconf
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 settings = Dynaconf(
-    envvar_prefix="project_name",
+    envvar_prefix="example_stt",
     preload=[os.path.join(HERE, "default.toml")],
     settings_files=["settings.toml", ".secrets.toml"],
     environments=["development", "production", "testing"],
-    env_switcher="project_name_env",
+    env_switcher="example_stt_env",
     load_dotenv=False,
 )
 
@@ -18,7 +18,7 @@ settings = Dynaconf(
 # How to use this application settings
 
 ```
-from project_name.config import settings
+from example_stt.config import settings
 ```
 
 ## Acessing variables
@@ -45,15 +45,15 @@ KEY=value
 
 ### As environment variables
 ```
-export PROJECT_NAME_KEY=value
-export PROJECT_NAME_KEY="@int 42"
-export PROJECT_NAME_KEY="@jinja {{ this.db.uri }}"
-export PROJECT_NAME_DB__uri="@jinja {{ this.db.uri | replace('db', 'data') }}"
+export example_stt_KEY=value
+export example_stt_KEY="@int 42"
+export example_stt_KEY="@jinja {{ this.db.uri }}"
+export example_stt_DB__uri="@jinja {{ this.db.uri | replace('db', 'data') }}"
 ```
 
 ### Switching environments
 ```
-PROJECT_NAME_ENV=production project_name run
+example_stt_ENV=production example_stt run
 ```
 
 Read more on https://dynaconf.com
